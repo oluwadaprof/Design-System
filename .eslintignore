@@ -1,0 +1,6 @@
+.next
+.husky
+.dependency-cruiser.js
+node_modules
+build
+src/design-system-ui/styled-system

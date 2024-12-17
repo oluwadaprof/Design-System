@@ -1,0 +1,10 @@
+@layer reset, base, tokens, recipes, utilities;
+
+:root {
+  --ff-primary-color: #f50 !important;
+  --ff-secondary-color: #616a7d !important;
+  --ff-text-color: #090b2b !important;
+  --ff-dialog-border-radius: 20px !important;
+  --ff-border-radius: 20px !important;
+  --ff-bg-fade: rgba(0, 0, 0, 0.2) !important;
+}

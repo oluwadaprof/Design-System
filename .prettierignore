@@ -1,0 +1,6 @@
+.next
+.husky
+.dependency-cruiser.js
+node_modules
+build
+src/pulse-ui/styled-system

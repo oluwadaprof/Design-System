@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@design-system-ui/*": ["./src/design-system-ui/*"],
+      "@design-system-ui-constants/*": ["./src/design-system-ui/constants/*"],
+      "@design-system-ui-lib/*": ["./src/design-system-ui/lib/*"],
+      "@design-system-ui-modules/*": ["./src/design-system-ui/modules/*"],
+      "@design-system-ui-types/*": ["./src/design-system-ui/types/*"],
+      "@design-system-ui-utils/*": ["./src/design-system-ui/utils/*"],
+      "@mocks/*": ["./__mocks__/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

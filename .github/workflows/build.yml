@@ -1,0 +1,37 @@
+name: Build
+on:
+  push:
+    branches: [main, master, staging]
+  pull_request:
+    branches: [main, master, staging]
+
+env:
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+
+jobs:
+  build:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: ^8.15.7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.11.0
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Build
+        env:
+          NODE_OPTIONS: '--max_old_space_size=8192'
+        run: pnpm build
